@@ -48,8 +48,8 @@ env:
     - LD_LIBRARY_PATH=$LUAJIT_LIB:$LD_LIBRARY_PATH
     - DRIZZLE_VER=2011.07.21
     - TEST_NGINX_SLEEP=0.006
+    - NGX_BUILD_DISABLE_NO_POOL=1
   matrix:
-    - NGINX_VERSION=1.9.15
     - NGINX_VERSION=1.11.2
 
 services:
@@ -68,7 +68,7 @@ install:
   - git clone https://github.com/openresty/test-nginx.git
   - git clone https://github.com/openresty/openresty.git ../openresty
   - git clone https://github.com/openresty/no-pool-nginx.git ../no-pool-nginx
-  - git clone https://github.com/openresty/openresty-devel-utils.git
+  - git clone https://github.com/pracj3am/openresty-devel-utils.git
   - git clone https://github.com/openresty/mockeagain.git
   - git clone https://github.com/openresty/lua-cjson.git
   - git clone https://github.com/openresty/lua-upstream-nginx-module.git ../lua-upstream-nginx-module
